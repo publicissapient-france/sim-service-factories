@@ -3,4 +3,5 @@ var container = require('vertx/container');
 var console   = require('vertx/console');
 var utils     = require('./utils.js');
 
-var id = utils.uuid();
+var id = 'factory-'+utils.uuid();
+
