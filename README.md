@@ -43,7 +43,7 @@ Il existe plusieurs types de farms et de stores, chacun avec des propriétés di
 
 * Reçoie les demandes des stores en bières
 * Demande la quantité de houblons correspondant aux factories
-* Choisie une ou des offres renvoyés par les factories et lui notifie l'achat
+* Choisie une ou des offres renvoyées par les factories et lui notifie l'achat
 * Envoie une offre au store (qu'il peut ne pas accepter)
 * Si le stock d'une factory est trop important, la bank la pénalise
 * Si une factory répond à des offres sans avoir le stock nécessaire, la bank la pénalise
@@ -52,14 +52,14 @@ Il existe plusieurs types de farms et de stores, chacun avec des propriétés di
 **Un store:**
 
 * Demande à toutes les factories une quantité de bière en échange d'un prix
-* Une fois que les factories ont répondu, choisit une offre est informe la factory choisie ainsi que la bank
+* Une fois que les factories ont répondu, choisit une offre et informe la factory choisie ainsi que la bank
 
 
 **La bank:**
 
-* La bank maintient l'état des stocks et des comptes des factories. Elle est notifié à chaque achat / vente réalise par une factory
-* Lorsqu'une vente de houblons est conclut entre une factory et une farm, la bank notifie la factory. Sans cette notification, la transaction est annulée
-* Lorsqu'une vente de bière est réalisée entre une factory et un store, la bank notifie la factory. Sans cette notification, la transaction est annulée
+* Maintient l'état des stocks et des comptes des factories. Elle est notifié à chaque achat / vente réalisé par une factory
+* Lorsqu'une vente de houblons est conclut entre une factory et une farm, la bank notifie la factory. Sans cette notification, la transaction est concidéré comme annulée
+* Lorsqu'une vente de bière est réalisée entre une factory et un store, la bank notifie la factory. Sans cette notification, la transaction est concidérée comme annulée
 * Si une factory triche, la bank la sanctionne
 
 **Règles communes:**
