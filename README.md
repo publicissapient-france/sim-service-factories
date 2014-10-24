@@ -3,7 +3,7 @@ Sim-service-factories
 
 Sim-service est un jeu permettant de mettre en place des micro-services communiquant à travers un bus de messages.
 
-Dans ce jeu vous ave le choix des armes: [Java](https://github.com/xebia-france/sim-service-factories/tree/java), [Javascript](https://github.com/xebia-france/sim-service-factories/tree/javascript) ou [Groovy](https://github.com/xebia-france/sim-service-factories/tree/java)
+Dans ce jeu vous avez le choix des armes: [Java](https://github.com/xebia-france/sim-service-factories/tree/java), [Javascript](https://github.com/xebia-france/sim-service-factories/tree/javascript) ou [Groovy](https://github.com/xebia-france/sim-service-factories/tree/java)
 
 Le tout s'articule autour du framework [vertx](http://vertx.io/) qui va nous permettre de faire communiquer nos services.
 
