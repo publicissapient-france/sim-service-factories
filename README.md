@@ -20,7 +20,7 @@ Pour se faire, il y a 4 types de batiments (nos types de services) dans Xebia-ci
 * Pour faire de la bière, il faut du houblon que les factories commandent aux **farms**
 * Une **bank** est également présente pour superviser les productions et empêcher les fraudes
 
-Votre est but sera de créer la **factory** la plus efficace possible. C'est à dire celle qui fournira le plus de bière aux stores tout en ayant un stock minimal.
+Votre est but sera de créer la **factory** la plus efficace possible. C'est à dire celle qui fournira le plus de bières aux stores tout en ayant un stock minimal.
 
 
 Règles
