@@ -28,7 +28,7 @@ Règles
 
 Voici le fonctionnement de chaque batiment de Xebia-city.
 
-Il existe plusieurs types de farms et de store, chacun avec des propriétés différentes.
+Il existe plusieurs types de farms et de stores, chacun avec des propriétés différentes.
 
 **Une farm:**
 
