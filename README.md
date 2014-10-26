@@ -75,7 +75,7 @@ Communication
 Guide de développement
 ----------------------
 
-Afin de développer la factory, il suffit de suivre ce guide développement. Chaque étape est agrémentée de la documentation vertx correspondate.
+Afin de développer la factory, il suffit de suivre ce guide développement. Chaque étape est agrémentée de la documentation vertx correspondante.
 
 #### Vertx
 
