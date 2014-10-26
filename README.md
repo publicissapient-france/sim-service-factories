@@ -131,3 +131,39 @@ Le store publie le message sur /city/factory, ainsi, **toutes** les factories de
 
 Pour recevoir les messages, il vous faut [écouter](http://vertx.io/core_manual_java.html#registering-and-unregistering-handlers) sur l'adresse /city/factory
 
+Si vous avez le stock suffisant, vous pouvez répondre immédiatement, sinon, il va falloir aller chercher du houblon.
+
+
+#### Achetez du houblon
+
+Pour faire de la bière, il faut du houblon, et c'est le rôle des farms.
+
+Pour l'acquérir, vous pouvez publier un nouveau message sur l'adresse /city/farm dans ce format:
+
+```
+{
+   "action": "request",
+   "from": "factory id",
+   "quantity": 10
+}
+```
+
+Chaque factory vous retournera alors une offre comme celle ci sur votre adresse privée /city/factory/votre-id:
+
+```
+{
+    "action": "response",
+    "from": "farm id",
+    "quantity": 3,
+    "cost": 30
+}
+```
+
+Ce message est avec [timeout](http://vertx.io/core_manual_java.html#specifying-timeouts-for-replies) vous devez donc [répondre](http://vertx.io/core_manual_java.html#replying-to-messages) assez rapidement que vous êtes intéressé:
+
+```{
+    "action": "acquittement",
+    "from": "factory id",
+    "quantity": 9
+}```
+
