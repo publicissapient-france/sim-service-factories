@@ -163,7 +163,8 @@ Une factory peut vous faire une offre avec un stock inférieur à votre demande 
 
 Ce message est avec [timeout](http://vertx.io/core_manual_java.html#specifying-timeouts-for-replies) vous devez donc [répondre](http://vertx.io/core_manual_java.html#replying-to-messages) assez rapidement que vous êtes intéressé:
 
-```{
+```
+{
     "action": "acquittement",
     "from": "factory id",
     "quantity": 9
@@ -192,3 +193,32 @@ Une fois votre houblon achetez, vous pouvez le transformer en bière et [envoyer
     "quantity": 10
 }
 ```
+
+Celui ci va vous répondre (ou pas) qu'il accepte votre demande comme suit:
+
+```
+{
+    "action": "acquittement",
+    "from": "store id",
+    "quantity": 10
+}
+```
+
+Ne débittez pas votre stock immédiatement, comme pour l'achat de houblon, seule la bank validera cette transaction en vous envoyant le message suivant sur votre adress privée:
+
+```
+{
+    "action": "sale",
+    "from": "bank",
+    "quantity": 10,
+    "cost": 1000
+}
+```
+
+#### Déployez votre factory
+
+Maintenant que votre factory est développé, il faut la déployer pour qu'elle s'installe en ville.
+
+
+Voila, vous avez toutes les informations nécessaires pour faire votre factory. A vous d'optimiser tout ça pour être la factory la plus rentable.
+
