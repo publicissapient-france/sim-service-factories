@@ -1,7 +1,7 @@
 Sim-service-factories
 =====================
 
-Sim-service est un jeu permettant de mettre en place des micro-services communiquant à travers un bus de messages.
+Sim-service est un jeu permettant de mettre en place des micro-services communiquant à travers un bus d'évènements.
 
 Dans ce jeu vous avez le choix des armes: [Java](https://github.com/xebia-france/sim-service-factories/tree/java), [Javascript](https://github.com/xebia-france/sim-service-factories/tree/javascript) ou [Groovy](https://github.com/xebia-france/sim-service-factories/tree/java)
 
@@ -70,3 +70,64 @@ Il existe plusieurs types de farms et de stores, chacun avec des propriétés di
 
 Communication
 -------------
+
+
+Guide de développement
+----------------------
+
+Afin de développer la factory, il suffit de suivre ce guide développement. Chaque étape est agrémentée de la documentation vertx correspondate.
+
+#### Vertx
+
+Vertx est un framework polyglotte qui permet de faire communiquer facilement des services à travers [un bus d'évènements](http://vertx.io/core_manual_java.html#the-event-bus) (entre autres). Dans vertx, chaque service est appelé [Verticle](http://vertx.io/manual.html#verticle).
+Les langages exécutable dans vertx sont le Java, le javascript, le ruby, le groovy, et le python. Nous vous proposons un squelette de Verticle pour bien démarrer dans trois de ces langages, [Java](https://github.com/xebia-france/sim-service-factories/tree/java), [Javascript](https://github.com/xebia-france/sim-service-factories/tree/javascript) ou [Groovy](https://github.com/xebia-france/sim-service-factories/tree/java).
+
+Pour démarrer, clonez la branche de votre choix et suivez le guide. Consultez les règles du jeu ou le diagramme de communication pour savoir quel service parle à quel autre service.
+
+L'ensemble des évènements publiés dans le bus seront des évènements JSON.
+
+#### Dites 'Hello'
+
+Chaque batiment doit se faire connaitre à l'ensemble de la ville lorsqu'il est créé. Par la suite, toute les 500ms, il doit indiquer qu'il est toujours en vie.
+
+Pour se faire, la première chose à faire dans votre Verticle est de [publier un évènement](http://vertx.io/core_manual_java.html#publishing-messages) **hello** dans le format suivant:
+
+```
+{
+  "action": "hello",
+  "team": "choose your team name and stick to it",
+  "from": "unique instance id",
+  "type": "factory",
+  "version": "version"
+}
+```
+
+Ceci sur l'adresse: /city
+
+En Java, vertx propose un [objet JSON](http://vertx.io/core_manual_java.html#json) pour faciliter la manipulation de ce format.
+
+Choisissez un nom de team. Le squelette choisie contient déjà un identifiant prédéfini. Enfin indiquez la version de votre factory (1.0 au départ).
+
+Maintenant, il vous faut indiquer toutes les 500 ms que votre factory est en vie. Heureusement, vertx propose un [ensemble d'outils](http://vertx.io/core_manual_java.html#periodic-timers) permettant de faire cela facilement.
+
+
+
+#### Recevez les demandes
+
+Maintenant que votre factory existe et le dit, il vous faut prendre en compte les demandes des stores.
+Les stores communiquent de la façon suivante:
+
+```
+{
+   "action": "request",
+   "from": "store id",
+   "quantity": 10,
+   "cost" : 1000
+}
+```
+
+Il vous indique ainsi la quantité de bière voulue ainsi que le prix qu'il est pret à payer pour ça.
+Le store publie le message sur /city/factory, ainsi, **toutes** les factories de Xebia-city vont recevoir le message. A vous d'être le plus rapide pour répondre le premier.
+
+Pour recevoir les messages, il vous faut [écouter](http://vertx.io/core_manual_java.html#registering-and-unregistering-handlers) sur l'adresse /city/factory
+
