@@ -204,7 +204,7 @@ Celui ci va vous répondre (ou pas) qu'il accepte votre demande comme suit:
 }
 ```
 
-Ne débittez pas votre stock immédiatement, comme pour l'achat de houblon, seule la bank validera cette transaction en vous envoyant le message suivant sur votre adress privée:
+Ne débittez pas votre stock immédiatement, comme pour l'achat de houblon, seule la bank validera cette transaction en vous envoyant le message suivant sur votre adresse privée:
 
 ```
 {
