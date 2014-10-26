@@ -159,11 +159,36 @@ Chaque factory vous retournera alors une offre comme celle ci sur votre adresse 
 }
 ```
 
+Une factory peut vous faire une offre avec un stock inférieur à votre demande si elle ne peux pas y répondre intégralement.
+
 Ce message est avec [timeout](http://vertx.io/core_manual_java.html#specifying-timeouts-for-replies) vous devez donc [répondre](http://vertx.io/core_manual_java.html#replying-to-messages) assez rapidement que vous êtes intéressé:
 
 ```{
     "action": "acquittement",
     "from": "factory id",
     "quantity": 9
-}```
+}
+```
 
+Une réponse ne veux pas dire que vous pouvez augmenter votre stock. En effet c'est la bank qui va vous signaler que la transaction c'est bien passée en vous contactant directement avec ce message:
+
+```
+{
+    "action": "purchase",
+    "from": "bank",
+    "quantity": 9,
+    "cost": 100
+}
+```
+
+#### Répondez au store
+
+Une fois votre houblon achetez, vous pouvez le transformer en bière et [envoyer](http://vertx.io/core_manual_java.html#sending-messages) une offre au store sur son adresse privée /city/store/id-store:
+
+```
+{
+    "action": "response",
+    "from": "farm id",
+    "quantity": 10
+}
+```
