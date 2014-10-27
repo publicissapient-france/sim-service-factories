@@ -71,6 +71,26 @@ Il existe plusieurs types de farms et de stores, chacun avec des propriétés di
 Communication
 -------------
 
+Voici le diagramme de communication de l'ensemble des services.
+
+![Diagramme](https://github.com/xebia-france/sim-service-factories/blob/master/com.png)
+
+1 Le store demande des bières aux factories
+
+2 La factory demande du houblon aux farms
+
+3 Les farms proposent du houblon à la factory
+
+4 La factory accepte une ou des offres de houblons. La/les farms previennent la bank des transactions
+
+5 La bank prévient la factory que la transaction est acceptée
+
+6 La factory fournie une offre de bières au store
+
+7 Le store accepte l'offre et le signal à la factory et à la bank
+
+8 La bank prévient la factory que la transaction est finalisée
+
 
 Guide de développement
 ----------------------
