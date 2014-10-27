@@ -81,7 +81,7 @@ Voici le diagramme de communication de l'ensemble des services.
 
 3 Les farms proposent du houblon à la factory
 
-4 La factory accepte une ou des offres de houblons. La/les farms previennent la bank des transactions
+4 La factory accepte une ou des offres de houblon. La/les farms previennent la bank des transactions
 
 5 La bank prévient la factory que la transaction est acceptée
 
