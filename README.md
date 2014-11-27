@@ -158,7 +158,7 @@ Chaque factory vous retournera alors une offre comme celle ci sur votre adresse 
 }
 ```
 
-Pour recevoir ces messages, il vous faut [écouter](http://vertx.io/core_manual_java.html#registering-and-unregistering-handlers) sur l'adresse /city/farms
+Pour recevoir ces messages, il vous faut [écouter](http://vertx.io/core_manual_java.html#registering-and-unregistering-handlers) sur l'adresse /city/factory/votre-id
 
 Une factory peut vous faire une offre avec un stock inférieur à votre demande si elle ne peux pas y répondre intégralement.
 
@@ -238,6 +238,9 @@ Ne débittez pas votre stock immédiatement, comme pour l'achat de houblon, seul
 
 Maintenant que votre factory est développé, il faut la déployer pour qu'elle s'installe en ville.
 
+```
+./factory.sh 'start|status|list|stop|restart' [config]
+```
 
 Voila, vous avez toutes les informations nécessaires pour faire votre factory. A vous d'optimiser tout ça pour être la factory la plus rentable.
 
