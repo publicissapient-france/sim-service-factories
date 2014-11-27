@@ -46,7 +46,7 @@ Il existe plusieurs types de farms et de stores, chacun avec des propriétés di
 * Choisie une ou des offres renvoyées par les factories et lui notifie l'achat
 * Envoie une offre au store (qu'il peut ne pas accepter)
 * Si le stock d'une factory est trop important, la bank la pénalise
-* Si une factory répond à des offres sans avoir le stock nécessaire, la bank la pénalise
+* La bank peut faire crédit à une factory, mais si la factory dépasse ce crédit, elle est pénalisée
 
 
 **Un store:**
@@ -132,31 +132,10 @@ Maintenant, il vous faut indiquer toutes les 500 ms que votre factory est en vie
 
 
 
-#### Recevez les demandes
-
-Maintenant que votre factory existe et le dit, il vous faut prendre en compte les demandes des stores.
-Les stores communiquent de la façon suivante:
-
-```
-{
-   "action": "request",
-   "from": "store id",
-   "quantity": 10,
-   "cost" : 1000
-}
-```
-
-Il vous indique ainsi la quantité de bière voulue ainsi que le prix qu'il est pret à payer pour ça.
-Le store publie le message sur /city/factory, ainsi, **toutes** les factories de Xebia-city vont recevoir le message. A vous d'être le plus rapide pour répondre le premier.
-
-Pour recevoir les messages, il vous faut [écouter](http://vertx.io/core_manual_java.html#registering-and-unregistering-handlers) sur l'adresse /city/factory
-
-Si vous avez le stock suffisant, vous pouvez répondre immédiatement, sinon, il va falloir aller chercher du houblon.
-
-
 #### Achetez du houblon
 
-Pour faire de la bière, il faut du houblon, et c'est le rôle des farms.
+Maintenant que votre factory existe et le dit, il lui faut de la bière à vendre.
+Pour faire de la bière, il faut du houblon, et c'est le rôle des farms
 
 Pour l'acquérir, vous pouvez publier un nouveau message sur l'adresse /city/farm dans ce format:
 
@@ -178,6 +157,8 @@ Chaque factory vous retournera alors une offre comme celle ci sur votre adresse 
     "cost": 30
 }
 ```
+
+Pour recevoir ces messages, il vous faut [écouter](http://vertx.io/core_manual_java.html#registering-and-unregistering-handlers) sur l'adresse /city/farms
 
 Une factory peut vous faire une offre avec un stock inférieur à votre demande si elle ne peux pas y répondre intégralement.
 
@@ -202,9 +183,27 @@ Une réponse ne veux pas dire que vous pouvez augmenter votre stock. En effet c'
 }
 ```
 
-#### Répondez au store
+#### Vendre de la bière
 
-Une fois votre houblon achetez, vous pouvez le transformer en bière et [envoyer](http://vertx.io/core_manual_java.html#sending-messages) une offre au store sur son adresse privée /city/store/id-store:
+Le but des factories est de vendre la bière aux stores.
+
+Un store communique de la façon suivante avec vous:
+
+```
+{
+   "action": "request",
+   "from": "store id",
+   "quantity": 10,
+   "cost" : 1000
+}
+```
+
+Il vous indique ainsi la quantité de bière voulue ainsi que le prix qu'il est pret à payer pour ça.
+Le store publie le message sur /city/factory, ainsi, **toutes** les factories de Xebia-city vont recevoir le message. A vous d'être le plus rapide pour répondre le premier.
+
+Pour recevoir les messages, il vous faut écouter sur l'adresse /city/factory
+
+Pour répondre aux demandes des stores, vous devez [envoyer](http://vertx.io/core_manual_java.html#sending-messages) une offre au store sur son adresse privée /city/store/id-store:
 
 ```
 {
