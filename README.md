@@ -32,17 +32,17 @@ Il existe plusieurs types de farms et de stores, chacun avec des propriétés di
 
 **Une farm:**
 
-* Produit des quantités de houblons à interval régulier
-* Le stock maximal de houblons est limité par factory
+* Produit des quantités de houblon à interval régulier
+* Le stock maximal de houblon est limité par factory
 * Chaque unité de houblon a un prix
 * Lorsqu'une farm reçoie une demande de houblon, elle propose une offre en fonction de son stock disponible. Cette offre expire au bout d'un délai prédéfinit
-* Lorsqu'une factory accepte une offre d'une farm, celle ci envoi la facture à la bank
+* Lorsqu'une factory accepte une offre d'une farm, celle ci envoie la facture à la bank
 
 
 **Une factory:**
 
 * Reçoie les demandes des stores en bières
-* Demande la quantité de houblons correspondant aux factories
+* Demande la quantité de houblon correspondant aux factories
 * Choisie une ou des offres renvoyées par les factories et lui notifie l'achat
 * Envoie une offre au store (qu'il peut ne pas accepter)
 * Si le stock d'une factory est trop important, la bank la pénalise
@@ -147,7 +147,7 @@ Pour l'acquérir, vous pouvez publier un nouveau message sur l'adresse /city/far
 }
 ```
 
-Chaque factory vous retournera alors une offre comme celle ci sur votre adresse privée /city/factory/votre-id:
+Chaque factory vous retournera alors une offre comme celle-ci sur votre adresse privée /city/factory/votre-id:
 
 ```
 {
@@ -172,7 +172,7 @@ Ce message est avec [timeout](http://vertx.io/core_manual_java.html#specifying-t
 }
 ```
 
-Une réponse ne veux pas dire que vous pouvez augmenter votre stock. En effet c'est la bank qui va vous signaler que la transaction c'est bien passée en vous contactant directement avec ce message:
+Une réponse ne veux pas dire que vous pouvez augmenter votre stock. En effet c'est la bank qui va vous signaler que la transaction s'est bien passée en vous contactant directement avec ce message:
 
 ```
 {
@@ -223,7 +223,7 @@ Celui ci va vous répondre (ou pas) qu'il accepte votre demande comme suit:
 }
 ```
 
-Ne débittez pas votre stock immédiatement, comme pour l'achat de houblon, seule la bank validera cette transaction en vous envoyant le message suivant sur votre adresse privée:
+Ne débitez pas votre stock immédiatement, comme pour l'achat de houblon, seule la bank validera cette transaction en vous envoyant le message suivant sur votre adresse privée:
 
 ```
 {
@@ -236,7 +236,7 @@ Ne débittez pas votre stock immédiatement, comme pour l'achat de houblon, seul
 
 #### Déployez votre factory
 
-Maintenant que votre factory est développé, il faut la déployer pour qu'elle s'installe en ville.
+Maintenant que votre factory est développée, il faut la déployer pour qu'elle s'installe en ville.
 
 ```
 ./factory.sh 'start|status|list|stop|restart' [config]
