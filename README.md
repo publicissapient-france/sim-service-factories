@@ -192,10 +192,14 @@ Ne débitez pas votre stock immédiatement, comme pour l'achat de houblon, seule
 #### Déployez votre factory
 
 Maintenant que votre factory est développée, il faut la déployer pour qu'elle s'installe en ville.
+Un script factory.sh est disponible dans votre workspace. Celui ci permet de déployer à distance sur une instance amazon votre factory et de la démarrer.
+Il s'exécute comme suit:
 
 ```
-./factory.sh 'start|status|list|stop|restart' [config]
+./factory.sh 'start|status|list|stop|restart|logs' [config]
 ```
+
+Le fichier de configuration factory.json est utilisé par défaut avec votre factory. Si vous souhaitez variabiliser des élements de votre application, [vous pouvez l'utiliser facilement](http://vertx.io/core_manual_java.html#getting-configuration-in-a-verticle)
 
 Voila, vous avez toutes les informations nécessaires pour faire votre factory. A vous d'optimiser tout ça pour être la factory la plus rentable.
 
