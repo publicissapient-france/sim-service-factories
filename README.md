@@ -55,7 +55,7 @@ Afin de développer la factory, il suffit de suivre ce guide développement. Cha
 #### Vertx
 
 Vertx est un framework polyglotte qui permet de faire communiquer facilement des services à travers [un bus d'évènements](http://vertx.io/core_manual_java.html#the-event-bus) (entre autres). Dans vertx, chaque service est appelé [Verticle](http://vertx.io/manual.html#verticle).
-Les langages exécutable dans vertx sont Java, javascript, ruby, groovy python, scala, clojure et ceylon. Nous vous proposons un squelette de Verticle pour bien démarrer dans trois de ces langages, [Java](https://github.com/xebia-france/sim-service-factories/tree/java), [Javascript](https://github.com/xebia-france/sim-service-factories/tree/javascript) ou [Groovy](https://github.com/xebia-france/sim-service-factories/tree/java).
+Les langages exécutable dans vertx sont Java, Javascript, Ruby, Groovy, Python, Scala, Clojure et Ceylon. Nous vous proposons un squelette de Verticle pour bien démarrer dans trois de ces langages, [Java](https://github.com/xebia-france/sim-service-factories/tree/java), [Javascript](https://github.com/xebia-france/sim-service-factories/tree/javascript) ou [Groovy](https://github.com/xebia-france/sim-service-factories/tree/java).
 
 Pour démarrer, clonez la branche de votre choix et suivez le guide. Consultez les règles du jeu ou le diagramme de communication pour savoir quel service parle à quel autre service.
 
