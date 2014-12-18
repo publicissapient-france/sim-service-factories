@@ -41,7 +41,7 @@ Voici le diagramme de communication de l'ensemble des services.
 
 6 La factory fournit une offre de bières au store
 
-7 Le store accepte l'offre et le signal à la factory et à la bank
+7 Le store accepte l'offre et le signale à la factory et à la bank
 
 8 La bank prévient la factory que la transaction est finalisée
 
