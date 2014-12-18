@@ -16,9 +16,9 @@ Il existe plusieurs types de farms et de stores, chacun avec des propriétés di
 
 **Une factory:**
 
-* Reçoie les demandes des stores en bières
-* Demande la quantité de houblon correspondant aux factories
-* Choisie une ou des offres renvoyées par les factories et lui notifie l'achat
+* Reçoit les demandes des stores en bières
+* Demande la quantité de houblon correspondant aux farms
+* Choisit une ou des offres renvoyées par les factories et lui notifie l'achat
 * Envoie une offre au store (qu'il peut ne pas accepter)
 * Si le stock d'une factory est trop important, la bank la pénalise
 * La bank peut faire crédit à une factory, mais si la factory dépasse ce crédit, elle est pénalisée
