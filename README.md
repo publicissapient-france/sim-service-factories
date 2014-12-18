@@ -102,7 +102,7 @@ Pour l'acquérir, vous pouvez publier un nouveau message sur l'adresse /city/far
 }
 ```
 
-Chaque factory vous retournera alors une offre comme celle-ci sur votre adresse privée /city/factory/votre-id:
+Chaque farm vous retournera alors une offre comme celle-ci sur votre adresse privée /city/factory/votre-id:
 
 ```
 {
