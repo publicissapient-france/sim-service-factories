@@ -13,7 +13,7 @@ L'histoire
 
 Sim-service ce déroule à Xebia-city. L'occupation principale de la population => **Boire de la bière**
 
-Pour se faire, il y a 4 types de batiments (nos types de services) dans Xebia-city:
+Pour ce faire, il y a 4 types de batiments (nos types de services) dans Xebia-city:
 
 * Les **stores**, où les gens commandent leurs bières
 * Les **factories**, où les stores se fournissent en bières.
