@@ -115,7 +115,7 @@ Chaque farm vous retournera alors une offre comme celle-ci sur votre adresse pri
 
 Pour recevoir ces messages, il vous faut [écouter](http://vertx.io/core_manual_java.html#registering-and-unregistering-handlers) sur l'adresse /city/factory/votre-id
 
-Une factory peut vous faire une offre avec un stock inférieur à votre demande si elle ne peux pas y répondre intégralement.
+Une farm peut vous faire une offre avec un stock inférieur à votre demande si elle ne peux pas y répondre intégralement.
 
 Ce message est avec [timeout](http://vertx.io/core_manual_java.html#specifying-timeouts-for-replies) vous devez donc [répondre](http://vertx.io/core_manual_java.html#replying-to-messages) assez rapidement que vous êtes intéressé:
 
