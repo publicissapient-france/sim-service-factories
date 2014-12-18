@@ -65,7 +65,7 @@ L'ensemble des évènements publiés dans le bus seront des évènements JSON.
 
 Chaque batiment doit se faire connaitre à l'ensemble de la ville lorsqu'il est créé. Par la suite, toutes les 500ms, il doit indiquer qu'il est toujours en vie.
 
-Pour se faire, la première chose à faire dans votre Verticle est de [publier un évènement](http://vertx.io/core_manual_java.html#publishing-messages) **hello** dans le format suivant:
+Pour ce faire, la première chose à faire dans votre Verticle est de [publier un évènement](http://vertx.io/core_manual_java.html#publishing-messages) **hello** dans le format suivant:
 
 ```
 {
@@ -81,7 +81,7 @@ Ceci sur l'adresse: /city
 
 En Java, vertx propose un [objet JSON](http://vertx.io/core_manual_java.html#json) pour faciliter la manipulation de ce format.
 
-Choisissez un nom de team. Le squelette choisie contient déjà un identifiant prédéfini. Enfin indiquez la version de votre factory (1.0 au départ).
+Choisissez un nom de team. Le squelette choisi contient déjà un identifiant prédéfini. Enfin, indiquez la version de votre factory (1.0 au départ).
 
 Maintenant, il vous faut indiquer toutes les 500 ms que votre factory est en vie. Heureusement, vertx propose un [ensemble d'outils](http://vertx.io/core_manual_java.html#periodic-timers) permettant de faire cela facilement.
 
