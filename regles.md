@@ -10,7 +10,7 @@ Il existe plusieurs types de farms et de stores, chacun avec des propriétés di
 * Produit des quantités de houblon à interval régulier
 * Le stock maximal de houblon est limité par factory
 * Chaque unité de houblon a un prix
-* Lorsqu'une farm reçoie une demande de houblon, elle propose une offre en fonction de son stock disponible. Cette offre expire au bout d'un délai prédéfinit
+* Lorsqu'une farm reçoit une demande de houblon, elle propose une offre en fonction de son stock disponible. Cette offre expire au bout d'un délai prédéfinit
 * Lorsqu'une factory accepte une offre d'une farm, celle-ci envoie la facture à la bank
 
 
