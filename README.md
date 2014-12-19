@@ -118,7 +118,7 @@ Host sim-factory
         User admin
 ```
 
-Les méthodes start et restart vont vous permettre de synchroniser votre code et de (re)démarrer votre factory autant de fois que vous le souhaitez. 
+Les méthodes start et restart du script vont vous permettre de synchroniser votre code et de (re)démarrer votre factory autant de fois que vous le souhaitez. 
 La méthode logs vous permets de voir vos logs d'éxécution.
 
 Le fichier de configuration factory.json est utilisé par défaut avec votre factory. Si vous souhaitez variabiliser des élements de votre application, [vous pouvez l'utiliser facilement](http://vertx.io/core_manual_java.html#getting-configuration-in-a-verticle)
