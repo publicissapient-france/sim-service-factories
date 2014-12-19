@@ -128,7 +128,9 @@ Le fichier de configuration factory.json est utilisé par défaut avec votre fac
 Maintenant que votre factory existe et le dit, il lui faut de la bière à vendre.
 Pour faire de la bière, il faut du houblon, et c'est le rôle des farms
 
-Pour l'acquérir, vous pouvez publier un nouveau message sur l'adresse /city/farm dans ce format:
+Lors de votre premier lancement, vous avez un stock de 0 et une trésorerie de 0. Il vous est possible d'acheter du houblon à crédit. Attention au delà d'un certain montant de dette, la banque appliquera des pénalités.
+
+Pour acquérir le houblon, vous pouvez publier un nouveau message sur l'adresse /city/farm dans ce format:
 
 ```
 {
@@ -199,7 +201,7 @@ Pour répondre aux demandes des stores, vous devez [envoyer](http://vertx.io/cor
 ```
 {
     "action": "response",
-    "from": "farm id",
+    "from": "factory id",
     "quantity": 10
 }
 ```
