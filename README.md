@@ -97,6 +97,27 @@ Il s'exécute comme suit:
 
 N'hésitez pas à demander le nom de votre machine pendant l'event.
 
+Pour faciler la connection au machine, il vous faut une clé ssh valide.
+Si vous n'en possédez pas, exécuter la commande suivante:
+
+```
+ssh-keygen -t dsa
+```
+
+Dans tous les cas, exécutez la commande suivante (en indiquant le bon nom de machine):
+
+```
+cat ~/.ssh/id_dsa.pub | ssh admin@nom-machine "cat - >> ~/.ssh/authorized_keys"
+```
+
+Enfin, dans votre ~/.ssh/config, ajoutez les lignes suivantes:
+
+```
+Host sim-factory
+        Hostname nom-machine
+        User admin
+```
+
 Les méthodes start et restart vont vous permettre de synchroniser votre code et de (re)démarrer votre factory autant de fois que vous le souhaitez. 
 La méthode logs vous permets de voir vos logs d'éxécution.
 
