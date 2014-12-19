@@ -85,7 +85,22 @@ Choisissez un nom de team. Le squelette choisi contient déjà un identifiant pr
 
 Maintenant, il vous faut indiquer toutes les 500 ms que votre factory est en vie. Heureusement, vertx propose un [ensemble d'outils](http://vertx.io/core_manual_java.html#periodic-timers) permettant de faire cela facilement.
 
+#### Déployez votre factory
 
+Maintenant que votre factory peut se signaler, il faut la déployer pour qu'elle s'installe en ville.
+Un script factory.sh est disponible dans votre workspace. Celui ci permet de déployer à distance sur une instance amazon votre factory et de la démarrer.
+Il s'exécute comme suit:
+
+```
+./factory.sh 'start|status|list|stop|restart|logs' [config]
+```
+
+N'hésitez pas à demander le nom de votre machine pendant l'event.
+
+Les méthodes start et restart vont vous permettre de synchroniser votre code et de (re)démarrer votre factory autant de fois que vous le souhaitez. 
+La méthode logs vous permets de voir vos logs d'éxécution.
+
+Le fichier de configuration factory.json est utilisé par défaut avec votre factory. Si vous souhaitez variabiliser des élements de votre application, [vous pouvez l'utiliser facilement](http://vertx.io/core_manual_java.html#getting-configuration-in-a-verticle)
 
 #### Achetez du houblon
 
@@ -189,17 +204,4 @@ Ne débitez pas votre stock immédiatement, comme pour l'achat de houblon, seule
 }
 ```
 
-#### Déployez votre factory
-
-Maintenant que votre factory est développée, il faut la déployer pour qu'elle s'installe en ville.
-Un script factory.sh est disponible dans votre workspace. Celui ci permet de déployer à distance sur une instance amazon votre factory et de la démarrer.
-Il s'exécute comme suit:
-
-```
-./factory.sh 'start|status|list|stop|restart|logs' [config]
-```
-
-Le fichier de configuration factory.json est utilisé par défaut avec votre factory. Si vous souhaitez variabiliser des élements de votre application, [vous pouvez l'utiliser facilement](http://vertx.io/core_manual_java.html#getting-configuration-in-a-verticle)
-
 Voilà, vous avez toutes les informations nécessaires pour faire votre factory. A vous d'optimiser tout ça pour être la factory la plus rentable.
-
