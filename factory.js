@@ -6,6 +6,8 @@ var utils = require('./utils.js');
 var id = 'factory-' + utils.uuid();
 
 // Send every 1 second a hello to the city
+// https://github.com/xebia-france/sim-service-factories/tree/javascript#dites-hello
+
 vertx.setPeriodic(1000, function (timerId) {
     container.logger.info("Say hello");
     vertx.eventBus.publish("/city", {
@@ -40,7 +42,9 @@ vertx.eventBus.registerHandler('/city/factory/' + id, function (message, replier
 
 });
 
-// Send 1 request to farm
+// Send 1 request to farms
+// https://github.com/xebia-france/sim-service-factories/tree/javascript#achetez-du-houblon
+
 vertx.setTimer(2000, function (timerID) {
     vertx.eventBus.publish("/city/farm", {
         action: "request",
