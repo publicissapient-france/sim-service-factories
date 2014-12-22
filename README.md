@@ -58,7 +58,7 @@ Pour vous aider dans votre développement, chaque squelette contient déjà:
 
 #### Vertx
 
-Vertx est un framework polyglotte qui permet de faire communiquer facilement des services à travers [un bus d'évènements](http://vertx.io/core_manual_java.html#the-event-bus) (entre autres). Dans vertx, chaque service est appelé [Verticle](http://vertx.io/manual.html#verticle).
+Vertx est un framework polyglotte qui permet de faire communiquer facilement des services à travers [un bus d'évènements](http://vertx.io/core_manual_groovy.html#the-event-bus) (entre autres). Dans vertx, chaque service est appelé [Verticle](http://vertx.io/manual.html#verticle).
 Les langages exécutable dans vertx sont Java, Javascript, Ruby, Groovy, Python, Scala, Clojure et Ceylon. Nous vous proposons un squelette de Verticle pour bien démarrer dans trois de ces langages, [Java](https://github.com/xebia-france/sim-service-factories/tree/java), [Javascript](https://github.com/xebia-france/sim-service-factories/tree/javascript) ou [Groovy](https://github.com/xebia-france/sim-service-factories/tree/groovy).
 
 Pour démarrer, clonez la branche de votre choix et suivez le guide. Consultez les règles du jeu ou le diagramme de communication pour savoir quel service parle à quel autre service.
@@ -69,7 +69,7 @@ L'ensemble des évènements publiés dans le bus seront des évènements JSON.
 
 Chaque batiment doit se faire connaitre à l'ensemble de la ville lorsqu'il est créé. Par la suite, toutes les 500ms, il doit indiquer qu'il est toujours en vie.
 
-Pour ce faire, la première chose à faire dans votre Verticle est de [publier un évènement](http://vertx.io/core_manual_java.html#publishing-messages) **hello** dans le format suivant:
+Pour ce faire, la première chose à faire dans votre Verticle est de [publier un évènement](http://vertx.io/core_manual_groovy.html#publishing-messages) **hello** dans le format suivant:
 
 ```
 {
@@ -83,11 +83,9 @@ Pour ce faire, la première chose à faire dans votre Verticle est de [publier u
 
 Ceci sur l'adresse: /city
 
-En Java, vertx propose un [objet JSON](http://vertx.io/core_manual_java.html#json) pour faciliter la manipulation de ce format.
-
 Choisissez un nom de team. Le squelette choisi contient déjà un identifiant prédéfini. Enfin, indiquez la version de votre factory (1.0 au départ).
 
-Maintenant, il vous faut indiquer toutes les 500 ms que votre factory est en vie. Heureusement, vertx propose un [ensemble d'outils](http://vertx.io/core_manual_java.html#periodic-timers) permettant de faire cela facilement.
+Maintenant, il vous faut indiquer toutes les 500 ms que votre factory est en vie. Heureusement, vertx propose un [ensemble d'outils](http://vertx.io/core_manual_groovy.html#periodic-timers) permettant de faire cela facilement.
 
 #### Déployez votre factory
 
@@ -125,7 +123,7 @@ Host sim-factory
 Les méthodes start et restart du script vont vous permettre de synchroniser votre code et de (re)démarrer votre factory autant de fois que vous le souhaitez. 
 La méthode logs vous permets de voir vos logs d'éxécution.
 
-Le fichier de configuration factory.json est utilisé par défaut avec votre factory. Si vous souhaitez variabiliser des élements de votre application, [vous pouvez l'utiliser facilement](http://vertx.io/core_manual_java.html#getting-configuration-in-a-verticle)
+Le fichier de configuration factory.json est utilisé par défaut avec votre factory. Si vous souhaitez variabiliser des élements de votre application, [vous pouvez l'utiliser facilement](http://vertx.io/core_manual_groovy.html#getting-configuration-in-a-verticle)
 
 #### Achetez du houblon
 
@@ -155,11 +153,11 @@ Chaque farm vous retournera alors une offre comme celle-ci sur votre adresse pri
 }
 ```
 
-Pour recevoir ces messages, il vous faut [écouter](http://vertx.io/core_manual_java.html#registering-and-unregistering-handlers) sur l'adresse /city/factory/votre-id
+Pour recevoir ces messages, il vous faut [écouter](http://vertx.io/core_manual_groovy.html#registering-and-unregistering-handlers) sur l'adresse /city/factory/votre-id
 
 Une farm peut vous faire une offre avec un stock inférieur à votre demande si elle ne peux pas y répondre intégralement.
 
-Ce message est avec [timeout](http://vertx.io/core_manual_java.html#specifying-timeouts-for-replies) vous devez donc [répondre](http://vertx.io/core_manual_java.html#replying-to-messages) assez rapidement que vous êtes intéressé:
+Ce message est avec [timeout](http://vertx.io/core_manual_groovy.html#request-timeouts) vous devez donc [répondre](http://vertx.io/core_manual_groovy.html#replying-to-messages) assez rapidement que vous êtes intéressé:
 
 ```
 {
@@ -200,7 +198,7 @@ Le store publie le message sur /city/factory, ainsi, **toutes** les factories de
 
 Pour recevoir les messages, il vous faut écouter sur l'adresse /city/factory
 
-Pour répondre aux demandes des stores, vous devez [envoyer](http://vertx.io/core_manual_java.html#sending-messages) une offre au store sur son adresse privée /city/store/id-store:
+Pour répondre aux demandes des stores, vous devez [envoyer](http://vertx.io/core_manual_groovy.html#sending-messages) une offre au store sur son adresse privée /city/store/id-store:
 
 ```
 {
