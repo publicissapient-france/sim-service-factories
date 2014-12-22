@@ -52,6 +52,10 @@ Guide de développement
 
 Afin de développer la factory, il suffit de suivre ce guide développement. Chaque étape est agrémentée de la documentation vertx correspondante.
 
+Pour vous aider dans votre développement, chaque squelette contient déjà:
+* Le hello périodique indiquant que votre application est en vie
+* Un (et un seul) cycle d'achat complet, sans la gestion du stock et des coûts
+
 #### Vertx
 
 Vertx est un framework polyglotte qui permet de faire communiquer facilement des services à travers [un bus d'évènements](http://vertx.io/core_manual_java.html#the-event-bus) (entre autres). Dans vertx, chaque service est appelé [Verticle](http://vertx.io/manual.html#verticle).
