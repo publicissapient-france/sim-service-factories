@@ -7,6 +7,8 @@ def logger = container.logger
 def id = "factory-" + UUID.randomUUID().toString()
 
 // Say hello every 1 second to the city
+// https://github.com/xebia-france/sim-service-factories/blob/groovy/README.md#dites-hello
+
 vx.setPeriodic(1000) { timerID ->
     logger.info("Say hello");
     vx.eventBus.publish("/city", [
@@ -40,6 +42,8 @@ vx.eventBus.registerHandler("/city/factory/" + id) { message ->
 }
 
 // Request hop from farms
+// https://github.com/xebia-france/sim-service-factories/blob/groovy/README.md#achetez-du-houblon
+
 vx.setTimer(2000) { timerId ->
     vx.eventBus.publish("/city/farm", [
             action: "request",
