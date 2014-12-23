@@ -127,6 +127,8 @@ La méthode logs vous permets de voir vos logs d'éxécution.
 
 Le fichier de configuration factory.json est utilisé par défaut avec votre factory. Si vous souhaitez variabiliser des élements de votre application, [vous pouvez l'utiliser facilement](http://vertx.io/core_manual_java.html#getting-configuration-in-a-verticle)
 
+Une fois votre factory déployée, vous devriez la voir apparaitre [ici](http://sim-core.aws.xebiatechevent.info:8080/):
+
 #### Achetez du houblon
 
 Maintenant que votre factory existe et le dit, il lui faut de la bière à vendre.
