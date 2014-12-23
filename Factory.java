@@ -65,7 +65,7 @@ public class Factory extends Verticle {
         JsonObject hello = new JsonObject();
         hello.putString("action", "hello");
         hello.putString("from", id);
-        hello.putString("team", "your-team-name");
+        hello.putString("team", YOUR TEAM NAME HERE);
         hello.putString("type", "factory");
         hello.putString("version", "1.0");
         eventBus.publish("/city", hello);
