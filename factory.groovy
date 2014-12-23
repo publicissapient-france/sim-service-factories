@@ -14,7 +14,7 @@ vx.setPeriodic(1000) { timerID ->
     vx.eventBus.publish("/city", [
             action: "hello",
             from: id,
-            team: "your-team-name",
+            team: YOUR TEAM NAME HERE,
             type: "factory",
             version: "1.0"
     ]);
