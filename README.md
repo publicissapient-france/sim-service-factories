@@ -190,6 +190,7 @@ Un store communique de la façon suivante avec vous:
 {
    "action": "request",
    "from": "store id",
+   "orderId": "order id",
    "quantity": 10,
    "cost" : 1000
 }
@@ -206,6 +207,7 @@ Pour répondre aux demandes des stores, vous devez [envoyer](http://vertx.io/cor
 {
     "action": "response",
     "from": "factory id",
+    "orderId": "order id",
     "quantity": 10
 }
 ```
