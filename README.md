@@ -20,7 +20,7 @@ Pour ce faire, il y a 4 types de batiments (nos types de services) dans Xebia-ci
 * Pour faire de la bière, il faut du houblon que les factories commandent aux **farms**
 * Une **bank** est également présente pour superviser les productions et empêcher les fraudes
 
-Votre est but sera de créer la **factory** la plus efficace possible. C'est à dire celle qui fournira le plus de bières aux stores tout en ayant un stock minimal.
+Votre but sera de créer la **factory** la plus efficace possible. C'est à dire celle qui fournira le plus de bières aux stores tout en ayant un stock minimal.
 
 Communication
 -------------
@@ -230,6 +230,21 @@ Ne débitez pas votre stock immédiatement, comme pour l'achat de houblon, seule
     "from": "bank",
     "quantity": 10,
     "cost": 1000
+}
+```
+
+#### Récupérer les métriques de votre factory
+
+A intervalle régulier la banque envoie des métriques concernant votre factory sur /city/factory/votre-id
+
+```json
+{
+    "action": "status",
+    "from": "bank",
+    "purchases": 100,
+    "sales": 100,
+    "costs": 100,
+    "stocks": 100
 }
 ```
 
