@@ -11,7 +11,7 @@ Le tout s'articule autour du framework [vertx](http://vertx.io/) qui va nous per
 L'histoire
 ----------
 
-Sim-service ce déroule à Xebia-city. L'occupation principale de la population => **Boire de la bière**
+Sim-service se déroule à Xebia-city. L'occupation principale de la population => **Boire de la bière**
 
 Pour ce faire, il y a 4 types de batiments (nos types de services) dans Xebia-city:
 
