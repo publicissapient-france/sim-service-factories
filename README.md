@@ -67,7 +67,7 @@ L'ensemble des évènements publiés dans le bus seront des évènements JSON.
 
 #### Dites 'Hello'
 
-Chaque batiment doit se faire connaitre à l'ensemble de la ville lorsqu'il est créé. Par la suite, toutes les 500ms, il doit indiquer qu'il est toujours en vie.
+Chaque batiment doit se faire connaitre à l'ensemble de la ville lorsqu'il est créé. Par la suite, toutes les 2s, il doit indiquer qu'il est toujours en vie.
 
 Pour ce faire, la première chose à faire dans votre Verticle est de [publier un évènement](http://vertx.io/core_manual_groovy.html#publishing-messages) **hello** dans le format suivant:
 
